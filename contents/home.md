@@ -1,4 +1,4 @@
-[![XX](https://img.shields.io/badge/flashfire1001-github-blue?logo=github)](https://github.com/XX)
+[![flashfire1001](https://img.shields.io/badge/flashfire1001-github-blue?logo=github)](https://github.com/firefire1001)
 
 I'm currently 
 
