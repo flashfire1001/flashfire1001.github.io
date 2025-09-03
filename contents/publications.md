@@ -1,6 +1,5 @@
 - XXXXXXX论文
 
-- XXXXXXX论文
+- X代表他一个也没写
 
-- XXXXXXX论文
 
