@@ -55,22 +55,22 @@ const ARTICLES = [
 ];
 
 const PROJECTS = {
-  patents:{ title:"Quantifying Innovation and Partnerships in Medical Technologies", image:"https://aribaza.github.io/assets/patents-background.png", meta:"Research · Data analysis", sections:[
+  patents:{ title:"Quantifying Innovation and Partnerships in Medical Technologies", image:"assets/patents-background.webp", meta:"Research · Data analysis", sections:[
     ["Overview","A patent-data exploration of innovation trends and partnerships in medical technologies."],
     ["Approach","The project combines data preparation, network analysis, geographic comparison, and visual explanation."],
     ["Outcome","The resulting maps and diagrams reveal influential patent families and collaboration patterns."]
   ]},
-  population:{ title:"Urban Intelligence: Population Distribution", image:"https://aribaza.github.io/assets/popdistribution-background.png", meta:"Data visualization · Web", sections:[
+  population:{ title:"Urban Intelligence: Population Distribution", image:"assets/popdistribution-background.webp", meta:"Data visualization · Web", sections:[
     ["Overview","An interactive web application for exploring population distribution and urban patterns."],
     ["Design","The interface turns geographic data into readable views for comparison and exploration."],
     ["Outcome","Users can move from a broad distribution to the local patterns that explain it."]
   ]},
-  tflex:{ title:"T-flex Wearable Posture Correction System", image:"https://aribaza.github.io/assets/tflex-background.png", meta:"Hardware · Arduino", sections:[
+  tflex:{ title:"T-flex Wearable Posture Correction System", image:"assets/tflex-background.webp", meta:"Hardware · Arduino", sections:[
     ["Overview","A wearable system designed to observe posture and provide timely feedback."],
     ["Prototype","The prototype combines sensors, an Arduino-based controller, and a wearable form factor."],
     ["Outcome","The work tests how lightweight feedback can support posture awareness without interrupting the user."]
   ]},
-  pillnet:{ title:"PillNet Medication Identification", image:"https://aribaza.github.io/assets/pillnet-background.png", meta:"AI · Accessibility", sections:[
+  pillnet:{ title:"PillNet Medication Identification", image:"assets/pillnet-background.webp", meta:"AI · Accessibility", sections:[
     ["Overview","A neural-network-based medication identification concept focused on accessible use."],
     ["Approach","The application joins image classification with a simple workflow for identifying likely medication matches."],
     ["Outcome","The prototype demonstrates how computer vision can support a clearer medication lookup experience."]
