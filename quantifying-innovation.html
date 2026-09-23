@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantifying Innovation and Partnerships in Medical Technologies</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://aribaza.github.io/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Ariadna Bazaga Pozas: Patent Analysis" />
+  <meta property="og:type" content="website" />
+  <meta property="og:URL" content="aribaza.github.io/quantifying-innovation.html" />
+  <meta property="og:image" content="https://aribaza.github.io/assets/og.jpg" />
+</head>
+<body>
+  <header>
+    <h2>Quantifying Innovation and Partnerships in Medical Technologies</h2>
+    <p>An exploration into patent data to measure innovation trends and foster partnerships within the medical technology sector.</p>
+  </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <h2>Overview</h2>
+      <p>This project leverages patent analysis to uncover innovation trends and partnerships in medical technologies. Using data from the Derwent Innovation Patent Database, we explored patents classified under the A61N IP category, focusing on fields like electrotherapy and radiation therapy. Our findings highlight the dynamic interplay between innovation, collaboration, and geographical factors in shaping technological advancements.</p>
+
+      <h2>The Approach</h2>
+      <p>Our analysis employed various computational methods, including data mining, network analysis, and visualization techniques:</p>
+      <ul>
+        <li><strong>Data Selection:</strong> Patent data were filtered by IPC codes, priority years, and publication countries to focus on specific technological areas.</li>
+        <li><strong>Visualization:</strong> Techniques such as bar charts, world heatmaps, and node-edge diagrams helped visualize patent trends and relationships.</li>
+        <li><strong>Network Analysis:</strong> Metrics like eigenvector centrality and betweenness centrality were used to identify influential patents and partnerships.</li>
+      </ul>
+      <p>Tools like Python libraries (pandas, networkx, matplotlib) and Gephi facilitated in-depth data analysis and visual representation.</p>
+
+      <h2>Key Findings</h2>
+      <ul>
+        <li>Patent filings have steadily increased, reflecting growing innovation in medical devices.</li>
+        <li>Collaborations between universities and private companies drive impactful innovations.</li>
+        <li>Geographical hotspots for innovation include the United States, China, and Germany.</li>
+        <li>Fampat (patent family) analysis enhances understanding of technological influence compared to single patent analysis.</li>
+      </ul>
+      
+
+
+      <h2>Publication Country Analysis</h2>
+      <p>Our study revealed significant contributions from countries like the United States, China, and Germany in publishing patents. A bar chart can highlight the top 25 countries for patent publications.</p>
+
+      <h2>Geographical Distribution</h2>
+      <p>The geographic spread of patents indicates areas of concentrated innovation. For example, the United States leads in electrotherapy patents, while emerging contributions are observed in China and South Korea. These trends can be effectively shown using a heatmap.</p>
+      <object type="image/svg+xml" data="https://aribaza.github.io/assets\worldmapforwebsite.svg" class="interactive-map">
+        Your browser does not support SVG.
+      </object>
+
+
+      <h2>Network Analysis</h2>
+      <p>Node-edge diagrams reveal interconnections between patents and their cited families, showcasing knowledge flows within the network. Nodes with high centrality metrics represent pivotal patents driving technological advancements.</p>
+
+      <div class="side-to-side-images">
+        <img src="https://aribaza.github.io/assets/DWPI_network_diagram.png">
+        <img src="https://aribaza.github.io/assets/INPADOC_network_diagram.png">
+      </div>
+
+      <h2>Conclusion</h2>
+      <p>This project underscores the value of patent analysis in understanding and fostering innovation. By mapping the technological landscape, we can identify collaboration opportunities, predict trends, and support strategic decision-making for stakeholders in the medical technology sector. The proposed visualisations serve as essential tools to communicate these insights effectively.</p>
+    </div>
+
+    <div class="other-projects">
+      <h3>Other Projects</h3>
+      <ul>
+        <li><a href="population-distribution.html">Population Distribution App</a></li>
+        <li><a href="tflex-posture-correction.html">T-flex: Wearable Posture Correction System</a></li>
+        <li><a href="pillnet-identification.html">PillNet: Accessible Neural Network-Based Pill Identification App</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
+</body>
+</html>

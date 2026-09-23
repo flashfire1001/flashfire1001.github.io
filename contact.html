@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="shortcut icon" href="https://aribaza.github.io/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Ariadna Bazaga Pozas: Contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:URL" content="aribaza.github.io/contact.html" />
+  <meta property="og:image" content="https://aribaza.github.io/assets/og.jpg" />
+</head>
+<body>
+  <header>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me for any inquiries or collaborations!</p>
+  </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <div class="section-holder">
+    <section class="contact-content">
+      <div class="blog-post">
+        <h2>Email</h2>
+        <div class="education-entry">
+          <p>If you want to get in touch, you can do so by emailing me at:</p>
+          <p><strong>aribazaga@gmail.com</strong></p>
+          <p>Or just fill out the contact form, and I'll get right back to you!</p>
+        </div>
+    </section>
+    <section class="contact-content">
+      <div class="blog-post">
+        <h2>Contact Form </h2>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xzzbagaz" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        alert('Thank you! Your message has been sent successfully.');
+        form.reset(); // Clear the form
+      } else {
+        alert('Oops! There was a problem submitting your form.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
+  });
+
+  document.addEventListener('scroll', () => {
+    const nav = document.querySelector('.sticky-nav');
+    if (window.scrollY > 200) {
+      nav.classList.add('scrolled'); // Add transparency
+    } else {
+      nav.classList.remove('scrolled'); // Restore full opacity
+    }
+  });
+</script>
+</html>

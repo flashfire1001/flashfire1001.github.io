@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PillNet: Accessible Neural Network-Based Pill Identification App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://aribaza.github.io/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Ariadna Bazaga Pozas: PillNet" />
+  <meta property="og:type" content="website" />
+  <meta property="og:URL" content="aribaza.github.io/pillnet-identification.html" />
+  <meta property="og:image" content="https://aribaza.github.io/assets/og.jpg" />
+</head>
+<body>
+  <header>
+    <h2>PillNet: Your AI-Driven Pill Identification Companion</h2>
+    <p>Empowering users, from the elderly to those managing complex prescriptions, to identify medications quickly and accurately using advanced neural networks.</p>
+  </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <h2>Overview</h2>
+      <p>PillNet addresses the challenge of identifying pills in a world moving away from single-use packaging. By scanning a pill, the app provides its type and details within seconds, aiding users in medication recognition and management.</p>
+
+      <h2>Development Journey</h2>
+      <p>Our team collaborated effectively to bring PillNet to life:</p>
+      <ul>
+        <li>I focused on programming the neural network and showcasing its functionality.</li>
+        <li>Boss Tangtokit conducted extensive research on innovation models, guiding the project’s focus.</li>
+        <li>Karim Wansa contributed high-quality pill images for training the neural network and defined the user persona.</li>
+      </ul>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li>Simple graphical user interface with large text and minimal navigation.</li>
+        <li>Text-to-speech functionality with adjustable volume, ideal for visually impaired users.</li>
+        <li>Accurate pill identification supported by a trained neural network.</li>
+        <li>Expandable database for continuous improvement and broad coverage.</li>
+      </ul>
+
+      <h2>Neural Network Training</h2>
+      <p>Our training process utilized the GoogleNet architecture, with a dataset of 150 pill images split into 80% for training and 20% for testing. Post-training, the model achieved a 100% success rate on test data and performed robustly during integration tests with webcam input.</p>
+
+      <h2>Project Evaluation</h2>
+      <p>Through feasibility, desirability, and viability analysis, we determined:</p>
+      <ul>
+        <li><strong>Feasibility:</strong> Expanding the app to include a larger pill database is practical and achievable.</li>
+        <li><strong>Desirability:</strong> While not universally desired, the app proves invaluable for the target user persona.</li>
+        <li><strong>Viability:</strong> Further training using diverse backgrounds and lighting conditions will enhance real-world performance.</li>
+      </ul>
+
+      <h2>Future Potential</h2>
+      <p>PillNet demonstrates strong promise for improving medication safety and accessibility. With further exploration and development, it can significantly enhance healthcare management for diverse user groups.</p>
+    </div>
+
+    <div class="other-projects">
+      <h3>Other Projects by Our Team</h3>
+      <ul>
+        <li><a href="quantifying-innovation.html">Quantifying Innovation and Partnerships in Medical Technologies</a></li>
+        <li><a href="population-distribution.html">Population Distribution App</a></li>
+        <li><a href="tflex-posture-correction.html">T-flex: Wearable Posture Correction System</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
+</body>
+</html>

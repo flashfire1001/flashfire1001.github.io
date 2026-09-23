@@ -1,0 +1,432 @@
+/* General styles */
+body {
+  font-family: "Eczar", serif;
+  margin: 0;
+  padding: 0;
+  color: #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  /* Initial gradient setup */
+  background: rgb(237,239,203);
+  background: linear-gradient(-120deg, #ebd2ca, #f1cedb, #a1c7d4, #a5dace, #b7e6c6, #7cb88f, #6f838a, #c598a9);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  max-width: 1280px;
+  margin: auto;
+}
+
+header h1 {
+  font-size: clamp(3rem, 10vw, 7rem);
+  margin: 0;
+  color: #214f4b;
+}
+
+header h2 {
+  font-size: 5rem;
+  margin: 0;
+  color: #346d68;
+  line-height: 1.2; /* Adjust default line spacing */
+}
+
+@media (max-width: 450px) {
+  header h2 {
+    font-size: 3rem; /* Reduce font size for smaller screens */
+    line-height: 1.1; /* Adjust line spacing for smaller screens */
+  }
+}
+
+header p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #5b716e;
+}
+
+.sticky-nav {
+  align-self: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid #214f4b;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque */
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  width: 80%;
+  max-width: 500px;
+}
+@media (max-width: 450px) {
+  .nav a {
+    font-size: 0.7 rem; /* Reduce font size for smaller screens */
+  }
+  .sticky-nav{
+    padding: 0.5rem 2px;
+  }
+}
+
+
+.sticky-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
+}
+
+nav a {
+  text-decoration: none;
+  color: #5b716e;
+  font-weight: bold;
+  position: relative; /* Required for the underline effect */
+}
+
+nav a::after {
+  content: ''; /* Creates the underline */
+  position: absolute;
+  bottom: -2px; /* Position the underline just below the text */
+  left: 0;
+  width: 0; /* Initially hidden */
+  height: 2px;
+  background-color: #5b716e; /* Match the color of the text */
+  transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+nav a:hover::after {
+  width: 100%; /* Full width when hovered */
+}
+
+/* Active class for the current page */
+nav a.active::after {
+  width: 100%; /* Always show the underline for the active link */
+}
+/* Work section */
+.work {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Explicitly limits the maximum number of items per row to 2 */
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 450px) {
+  .work {
+    grid-template-columns: 1fr; /* Ensures 1 item per row on smaller screens */
+  }
+}
+
+/* Work item styles */
+.work-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  color: #214f4b;
+}
+
+.work-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: #fff;
+  z-index: 2;
+}
+
+/* Ensure the entire work item is clickable */
+.work-link {
+  display: block;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit the color from parent (ensures the color remains the same) */
+}
+
+/* Optionally, add some styling to the hover effect for links */
+.work-link:hover .work-title {
+  color: #214f4b; /* Adjust text color on hover */
+}
+
+
+/* Hover card styles */
+.hover-card {
+  position: relative;
+  overflow: hidden; /* Ensures child elements stay within the card's bounds */
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.hover-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.default-image {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.hover-image {
+  position: absolute;
+  scale: 0.9;
+  top: 40%; /* Aligns to the top of the container */
+  left: -40px; /* Aligns to the left of the container */
+  width: 100%; /* Matches the width of the parent */
+  height: 100%; /* Ensures full coverage */
+  z-index: 0;
+  transform: translate(0, 0); /* Initial position */
+  transition: transform 0.3s ease; /* Smooth movement on hover */
+}
+
+/* Hover behavior */
+.hover-card:hover .hover-image {
+  transform: translate(10px, -10px); /* Slight upward-left movement */
+}
+
+
+/* Blog content styles */
+.blog-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.564);
+  border-radius: 12px;
+}
+@media (max-width: 450px) {
+  .blog-content {
+    width: 90%; /* Make it take up most of the screen width, but not full */
+    margin: auto; /* Center the box on the screen */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+}
+
+.blog-post h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  color: #214f4b;
+}
+
+.blog-post p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5b716e;
+}
+
+.blog-post ul {
+  font-size: 1.1rem;
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: #5b716e;
+}
+
+.other-projects {
+  margin-top: 3rem;
+}
+
+.other-projects h3 {
+  font-size: 1.5rem;
+  color: #214f4b;
+}
+
+.other-projects ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.other-projects ul li {
+  margin: 1rem 0;
+}
+
+.other-projects ul li a {
+  text-decoration: none;
+  color: #5b716e;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.other-projects ul li a:hover {
+  color: #214f4b;
+}
+
+/* Footer styles */
+footer {
+  background-color: #214f4b;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+.face{
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 2rem;
+}
+.text-with-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+@media (max-width: 450px) {
+  .text-with-image {
+    flex-direction: column;
+  }
+  .face{
+    max-width: 80vw;
+    height: auto;
+    margin: 0rem 0rem;
+  }
+}
+
+/* Contact form section */
+/* Center form fields */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%; /* Ensure the form takes full width of its container */
+  gap: 1.5rem; /* Increased gap between fields */
+}
+
+/* Labels for form fields */
+.contact-form label {
+  font-size: 1.1rem;
+  color: #214f4b;
+}
+
+/* Inputs and textarea styling */
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #214f4b;
+  border-radius: 8px;
+  width: 100%; /* This will make the input fields take up the full width of their parent container */
+  max-width: 100%; /* Prevents the fields from expanding beyond their parent width */
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+/* Textarea has the resize property for flexibility */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px; /* Set a minimum height */
+}
+
+/* Submit button */
+.submit-button {
+  background-color: #214f4b;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #346d68;
+}
+
+.form-message {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  text-align: center;
+  font-size: 1rem; /* Optional: Set font size */
+  color: #214f4b; /* Set default color */
+}
+
+.section-holder{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  align-self: center;
+  gap: 1rem;
+  width: 80%;
+}
+
+@media (max-width: 450px) {
+  .section-holder {
+    flex-direction: column; /* Stack items vertically */
+    width: auto; /* Allow natural width */
+    align-self: center; /* Center within parent */
+    align-items: center; /* Center the content horizontally */
+    margin: auto; /* Center on the screen */
+  }
+
+  .contact-content {
+    width: 90%; /* Make it take up most of the screen width, but not full */
+    margin: auto; /* Center the box on the screen */
+  }
+}
+
+.contact-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: auto;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.564);
+  border-radius: 12px;
+}
+
+.interactive-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  border-radius: 16px;
+}
+
+.side-to-side-images {
+  display: flex; /* Arrange images in a row */
+  justify-content: center; /* Center the content */
+  align-items: center; /* Align images vertically in the center */
+  width: 90%; /* Match the width of .interactive-map */
+  margin: auto; /* Center the container */
+  border-radius: 16px; /* Same rounded corners as .interactive-map */
+  gap: 16px; /* Add space between images */
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.side-to-side-images img {
+  width: 45%; /* Ensure both images take up the same width */
+  height: 100%; /* Allow the height to adjust proportionally */
+  object-fit: fill; /* Ensure images fit within the container */
+  border-radius: 8px; /* Optional: Add rounded corners for aesthetics */
+}
+
